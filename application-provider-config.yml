@@ -32,7 +32,7 @@ eureka:
   client:
     service-url:
       #指定eureka注册中心
-      defaultZone: http://localhost:8000/eureka
+      defaultZone: http://localhost:8400/eureka
       #集群
       #defaultZone: http://localhost8000:8000/eureka,http://localhost8100:8100/eureka,http://localhost8200:8200/eureka
 
@@ -79,7 +79,7 @@ eureka:
   client:
     service-url:
       #指定eureka注册中心
-      defaultZone: http://localhost:8000/eureka
+      defaultZone: http://localhost:8500/eureka
       #集群
       #defaultZone: http://localhost8000:8000/eureka,http://localhost8100:8100/eureka,http://localhost8200:8200/eureka
 
