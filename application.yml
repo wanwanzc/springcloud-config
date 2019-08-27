@@ -1,0 +1,13 @@
+---
+# 开发环境
+spring:
+  application:
+    name: wanmsc-config-dev
+  profiles: dev
+
+---
+# 测试环境
+spring:
+  application:
+    name: wanmsc-config-test
+  profiles: test
