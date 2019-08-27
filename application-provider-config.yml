@@ -1,0 +1,92 @@
+server:
+  port: 8084
+
+spring:
+  profiles: dev
+  # 指定当前为服务对象(提供者)暴露的名称
+  application:
+    name: wanmsc-provider-depart
+  jpa:
+    # 应用启动时是否自动建表, 默认为false
+    generate-ddl: true
+    # 是否在控制台显示SQL语句, 默认为false
+    show-sql: true
+    # 设置应用启动时不重新建表
+    hibernate:
+      ddl-auto: none
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/learn?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+
+logging:
+  pattern:
+    console: level-%level %msg%n
+  level:
+    root: info
+    org.hibernate: info
+    com.wan.provider: debug
+
+eureka:
+  client:
+    service-url:
+      #指定eureka注册中心
+      defaultZone: http://localhost:8000/eureka
+      #集群
+      #defaultZone: http://localhost8000:8000/eureka,http://localhost8100:8100/eureka,http://localhost8200:8200/eureka
+
+info:
+  company.name: www.wan.com
+  company.address: China
+  company.tel: 12345678
+  app.name: wan-msc
+  app.desc: mic-service-cloud
+  author: wan
+
+---
+server:
+  port: 8085
+
+spring:
+  profiles: test
+  # 指定当前为服务对象(提供者)暴露的名称
+  application:
+    name: wanmsc-provider-depart
+  jpa:
+    # 应用启动时是否自动建表, 默认为false
+    generate-ddl: true
+    # 是否在控制台显示SQL语句, 默认为false
+    show-sql: true
+    # 设置应用启动时不重新建表
+    hibernate:
+      ddl-auto: none
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/learn1?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+
+logging:
+  pattern:
+    console: level-%level %msg%n
+  level:
+    root: info
+    org.hibernate: info
+    com.wan.provider: debug
+
+eureka:
+  client:
+    service-url:
+      #指定eureka注册中心
+      defaultZone: http://localhost:8000/eureka
+      #集群
+      #defaultZone: http://localhost8000:8000/eureka,http://localhost8100:8100/eureka,http://localhost8200:8200/eureka
+
+info:
+  company.name: www.wan.com
+  company.address: China
+  company.tel: 12345678
+  app.name: wan-msc
+  app.desc: mic-service-cloud
+  author: wan

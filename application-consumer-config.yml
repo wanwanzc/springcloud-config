@@ -1,0 +1,38 @@
+server:
+  port: 7070
+
+spring:
+  profiles: dev
+  application:
+    name: wanmsc-consumer-depart
+
+eureka:
+  client:
+    service-url:
+      #指定eureka注册中心
+      defaultZone: http://localhost:8400/eureka
+
+#开启Feign对Hystrix支持
+feign:
+  hystrix:
+    enabled: true
+
+---
+server:
+  port: 9090
+
+spring:
+  profiles: dev
+  application:
+    name: wanmsc-consumer-depart
+
+eureka:
+  client:
+    service-url:
+      #指定eureka注册中心
+      defaultZone: http://localhost:8500/eureka
+
+#开启Feign对Hystrix支持
+feign:
+  hystrix:
+    enabled: true
